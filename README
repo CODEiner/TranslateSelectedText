@@ -1,6 +1,7 @@
 
-Этот плагин для редактора Sublime Text 2 переводит выделенный текст 
-с помощью Google Translate API v1. Для его работы требуется интернет.
+Это плагин для редактора Sublime Text 2 http://www.sublimetext.com/2
+Он переводит выделенный текст с помощью Google Translate API v1.
+Для его работы требуется интернет.
 
 Чтобы настроить с какого на какой язык переводить,
 нужно отредактировать файл в каталоге плагина
@@ -17,13 +18,14 @@ Translate API v1 устарел и может перестать работат�
 Рекомендуется переходить на v2, но она требует ключ,
 привязанный к аккаунту Google.
 http://code.google.com/intl/ru-RU/apis/language/translate/overview.html
-Плагин под вторую версию я возможно сделаю позднее...
+Плагин под вторую версию API я возможно сделаю позднее...
+
 
 _____________________________________________________________________
 
-This plug-in for Sublime Text editor 2 translates selected text 
-using Google Translate API v1. For his work requires Internet connection.
-
+This plug-in for Sublime Text 2 http://www.sublimetext.com/2
+It translates selected text using Google Translate API v1.
+For his work requires internet connection.
 
 To configure a transfer to a language, you need to edit file
 Default (*).sublime-keymap
