@@ -1,0 +1,10 @@
+[{
+  "keys": ["ctrl+shift+r"],
+  "command": "translate_selected",
+  "args": {"from_language": "en", "to_language": "ru"}
+},
+{
+  "keys": ["ctrl+shift+e"],
+  "command": "translate_selected",
+  "args": {"to_language": "en"}
+}]
