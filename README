@@ -1,41 +1,21 @@
-
-Это плагин для редактора Sublime Text 2 http://www.sublimetext.com/2
-Он переводит выделенный текст с помощью Google Translate API v1.
+Плагин для редактора Sublime Text 2 http://www.sublimetext.com/2
+Переводит выделенный текст с помощью Google Translate API
 Для его работы требуется интернет.
 
-Чтобы настроить с какого на какой язык переводить,
-нужно отредактировать файл в каталоге плагина
-Default (*).sublime-keymap
-
-по умолчанию:
-ctrl+shift+r - переводит с английского на русский
-ctrl+shift+e - переводит с любого на английский
-
-Аргумент from_language не обязательный. При его отсутствии 
-Google определит язык исходного текста сам (не всегда верно).
-
-Translate API v1 устарел и может перестать работать.
-Рекомендуется переходить на v2, но она требует ключ,
-привязанный к аккаунту Google.
-http://code.google.com/intl/ru-RU/apis/language/translate/overview.html
-Плагин под вторую версию API я возможно сделаю позднее...
+Перестанет работать в декабре, API закрывается :(
+Новая версия плагина в разработке...
 
 
-_____________________________________________________________________
+Для настройки языка редактируйте файлы
+Default (*).sublime-keymap и Context.sublime-menu
+____________________________________________
 
-This plug-in for Sublime Text 2 http://www.sublimetext.com/2
-It translates selected text using Google Translate API v1.
-For his work requires internet connection.
+Plug-in for Sublime Text editor 2 http://www.sublimetext.com/2 
+Translate the selected text using Google Translate API 
+to its operation requires the Internet. 
 
-To configure a transfer to a language, you need to edit file
-Default (*).sublime-keymap
+Stop working in December, API closes :(
+New version this plugin in development...
 
-by default:
-ctrl+shift+r - translates from English to Russian
-ctrl+shift+e - translates from any to English
-
-The argument is optional from_language. In his absence Google 
-determines the language of the source text itself (not always true).
-
-p.s.
-This text was translated using this plugin
+To set the language edit files
+Default (*). Sublime-keymap and Context.sublime-menu
