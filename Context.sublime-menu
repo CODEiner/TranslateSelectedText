@@ -1,0 +1,14 @@
+[
+    { "caption": "-", "id": "translate" },
+
+    {
+        "caption": "Translate from EN to RU",
+        "command": "translate_selected",
+        "args": {"from_language": "en", "to_language": "ru"}
+    },
+    {
+        "caption": "Translate from RU to EN",
+        "command": "translate_selected",
+        "args": {"to_language": "en"}
+    }
+]
