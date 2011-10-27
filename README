@@ -1,21 +1,9 @@
 Плагин для редактора Sublime Text 2 http://www.sublimetext.com/2
-Переводит выделенный текст с помощью Google Translate API
-Для его работы требуется интернет.
+Производит машинный перевод выделенного фрагмента текста.
+Для работы плагина требуется интернет.
 
-Перестанет работать в декабре, API закрывается :(
-Новая версия плагина в разработке...
+Если выделен английский текст, то переводит на русский язык.
+Если выделен русский текст, то переводит на английский язык.
 
-
-Для настройки языка редактируйте файлы
-Default (*).sublime-keymap и Context.sublime-menu
-____________________________________________
-
-Plug-in for Sublime Text editor 2 http://www.sublimetext.com/2 
-Translate the selected text using Google Translate API 
-to its operation requires the Internet. 
-
-Stop working in December, API closes :(
-New version this plugin in development...
-
-To set the language edit files
-Default (*). Sublime-keymap and Context.sublime-menu
+Используемое сочетание клавиш ctrl+shift+r
+можно поменять в файлах Default (*).sublime-keymap

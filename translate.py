@@ -1,34 +1,45 @@
 import sublime, sublime_plugin
-import json
-from urllib2 import urlopen
-from urllib import urlencode
+import httplib
+import urllib
+
 
 class translateSelectedCommand(sublime_plugin.TextCommand):
 
-    def getTranslate(self, lang1, lang2, text):
+    def getTranslate(self, text):
 
-        base_url = 'http://ajax.googleapis.com/ajax/services/language/translate?'
-        
-        params = urlencode({
-            'v': 1.0,
-            'q': text.encode('utf-8'),
-            'langpair': '%s|%s' % (lang1, lang2),
+        if(text == text.encode('utf-8')):
+            lang1, lang2 = ('en', 'ru')
+        else:
+            lang1, lang2 = ('ru', 'en')
+
+        params = urllib.urlencode({
+            'text': text.encode('utf-8'),
+            'sl': lang1,
+            'tl': lang2,
         })
-        url = base_url+params
-
+        headers = {'User-Agent': 'Mozilla/5.0',
+                   'Referer': 'http://slovari.yandex.ru/~translate/',
+                   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                   'Accept-Charset': 'utf-8',
+                  }
         try:
-            content = urlopen(url).read()
-            js = json.loads(content)
-            translation = js['responseData']['translatedText']
+            conn = httplib.HTTPConnection('slovari.yandex.ru')
+            conn.request("POST", '/async/translator.xml', params, headers)
+            response = conn.getresponse()
         except:
-            #print js['responseDetails']
-            print 'translate error'
-            translation = text
+            sublime.status_message('translate ERROR :(')
+        
+        if(response.status == 200):
+            content = response.read()
+            text = content.decode('utf-8')
+        else:
+            sublime.status_message('Translate ERROR: %s %s'%(response.status, response.reason))
+        
+        return text
 
-        return translation
 
-    def run(self, edit, from_language="", to_language="en"):
+    def run(self, edit):
         for region in self.view.sel():
-            text = self.getTranslate(from_language, to_language, self.view.substr(region))
-            self.view.erase(edit, region)
-            self.view.insert(edit, region.begin(), text)
+            text = self.getTranslate(self.view.substr(region))
+            self.view.replace(edit, region, text)
+
